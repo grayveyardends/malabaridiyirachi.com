@@ -5,7 +5,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    
     background-size: cover; /* Ensure the background covers the whole page */
     color: #333; /* Dark text color for readability */
 }
@@ -67,13 +66,13 @@ main {
     border: 4px solid transparent; /* Default border style for grid items */
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
 }
+
 .product-title {
     font-size: 14px; /* Consistent font size */
     font-weight: normal; /* Consistent font weight */
     color: #333; /* Text color */
     margin: 0; /* Adjust margin if necessary */
 }
-
 
 /* Chicken Products - Green Theme */
 .chicken {
@@ -182,6 +181,7 @@ main {
     padding-left: 20px;
     margin: 0; 
 }
+
 .availability {
     display: block;
     margin-top: 10px; /* Space above the availability text */
@@ -190,6 +190,7 @@ main {
     text-align: center; /* Center the text */
     font-weight: bold; /* Make the text bold */
 }
+
 .price {
     display: inline-block;
     background-color: #ffd700; /* Bright yellow gold */
@@ -269,27 +270,19 @@ footer {
 .call-us {
     display: none; 
 }
+
 .sidebar .closebtn {
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    cursor: pointer;
 }
 
-.menu-toggle {
-    font-size: 24px; /* Size of the toggle icon */
-    cursor: pointer;
-    color: #fff; /* White color for toggle */
-    line-height: 50px; /* Ensure it aligns with the header height */
+.sidebar.open {
+    width: 250px; /* Width of the sidebar when open */
 }
 
-main {
-    transition: margin-left 0.5s;
-    padding: 20px;
-}
-
-.sidebar-open ~ main {
-    margin-left: 250px;
+.sidebar.open .call-us {
+    display: block; /* Show the call us link when sidebar is open */
 }
