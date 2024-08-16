@@ -264,80 +264,76 @@ footer {
 }
 
 .sidebar a:hover {
-    background-color: #8c000094;
-}
-
-.call-us {
-    display: none; 
+    background-color: #8c0000;
 }
 
 .sidebar .closebtn {
     position: absolute;
-    top: 20px;
+    top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
 }
 
-.sidebar.open {
-    width: 250px; /* Width of the sidebar when open */
+.sidebar #call-us {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    background-color: #25D366;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0;
 }
 
-.sidebar.open .call-us {
-    display: block; /* Show the call us link when sidebar is open */
-}
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 column */
-        grid-template-rows: repeat(9, auto); /* 9 rows, automatically sized */
-        gap: 20px; /* Adjusted gap for better spacing on mobile */
-    }
-
-    .grid-item {
-        width: 100%; /* Ensure items take up full width */
-        min-width: unset; /* Remove min-width to allow full width */
-        max-width: unset; /* Remove max-width to allow full width */
-    }
-
-    .product-title {
-        font-size: 14px; /* Adjusted font size for readability */
-    }
-
-    .price {
-        font-size: 12px; /* Adjust font size for mobile */
-        padding: 5px 10px; /* Adjusted padding */
-    }
-
-    .description {
-        font-size: 12px; /* Adjusted font size for mobile */
-        padding: 10px; /* Adjusted padding */
-    }
-
-    .availability {
-        font-size: 12px; /* Adjusted font size for mobile */
-    }
-
+/* Mobile View - Adjust grid layout */
+@media screen and (max-width: 768px) {
     header {
-        height: 40px; /* Smaller header for mobile */
-        padding: 5px 10px;
+        flex-direction: column;
+        justify-content: center;
     }
 
     header h1 {
-        font-size: 14px; /* Adjusted header text size */
+        font-size: 18px;
     }
 
-    .menu-toggle {
-        font-size: 20px; /* Adjusted size of the toggle icon */
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 20px; /* Reduced gap for mobile */
     }
 
-    main {
-        padding: 60px 10px 10px; /* Adjusted padding for mobile */
+    .grid-item {
+        min-height: 150px; /* Reduce height for mobile */
     }
 
     footer {
-        font-size: 12px; /* Adjusted footer text size */
-        padding: 10px; /* Adjusted padding for mobile */
+        font-size: 10px; /* Smaller font for mobile */
+    }
+
+    .whatsapp-link {
+        bottom: 5px; /* Adjusted position */
+        right: 5px; /* Adjusted position */
     }
 }
 
+/* 9-Row, 1-Column Mobile Layout */
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column */
+        grid-template-rows: repeat(9, auto); /* 9 rows */
+    }
 
+    .grid-item {
+        min-height: 120px; /* Reduce height for smaller screens */
+    }
+
+    footer {
+        padding: 8px; /* Reduced padding */
+    }
+
+    .whatsapp-link {
+        bottom: 5px;
+        right: 5px;
+    }
+}
