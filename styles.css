@@ -4,14 +4,14 @@ body {
     background-image: url('images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover; /* Ensure the background covers the whole page */
     color: #333; /* Dark text color for readability */
 }
 
 header {
-    background-color: rgba(108, 79, 59, 0.8); /* Semi-transparent dark brown background */
-    color: #fff; /* White text */
+    background-color: rgba(153, 68, 11, 0.8); /* Semi-transparent dark brown background */
+    color: #ffffff; /* White text */
     padding: 5px 15px; /* Reduced padding */
     border-bottom: 2px solid #fff; /* White border */
     position: fixed;
@@ -76,66 +76,66 @@ main {
 
 /* Chicken Products - Green Theme */
 .chicken {
-    background: #e8f5e9; /* Very light green */
-    border-color: #66bb6a; /* Green border */
+    background: #463c3c; /* Very light green */
+    border-color: #12c01b; /* Green border */
 }
 
 .chicken:hover {
-    box-shadow: 0 0 15px #66bb6a; /* Glowing effect */
+    box-shadow: 0 0 15px#00ff0d; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .kovakhya-fry {
-    background: #e8f5e9; /* Very light green */
-    border-color: #348B17; /* Green border */
+    background: #463c3c; /* Very light green */
+    border-color: #0b7103; /* Green border */
 }
 
 .kovakhya-fry:hover {
-    box-shadow: 0 0 15px #348B17; /* Glowing effect */
+    box-shadow: 0 0 15px #40ff00; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Idiyirachi Products - Dark Red Theme */
 .idiyirachi {
-    background: #fbe9e7; /* Very light red */
-    border-color: #d32f2f; /* Dark red border */
+    background: #463c3c; /* Very light red */
+    border-color: #820c0c; /* Dark red border */
 }
 
 .idiyirachi:hover {
-    box-shadow: 0 0 15px #d32f2f; /* Glowing effect */
+    box-shadow: 0 0 15px #ff0000; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Fish Pickle - Ocean Light Blue Theme */
 .fish-pickle {
-    background: #e0f7fa; /* Ocean light blue */
-    border-color: #0288d1; /* Ocean blue border */
+    background: #463c3c; /* Ocean light blue */
+    border-color: #01679e; /* Ocean blue border */
 }
 
 .fish-pickle:hover {
-    box-shadow: 0 0 15px #0288d1; /* Glowing effect */
+    box-shadow: 0 0 15px #0077ff; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Meat Cheenth Products - Bright Red Theme */
 .meat-cheenth {
-    background: #ffebee; /* Very light red */
-    border-color: #e57373; /* Bright red border */
+    background: #463c3c; /* Very light red */
+    border-color: #6a0808; /* Bright red border */
 }
 
 .meat-cheenth:hover {
-    box-shadow: 0 0 15px #e57373; /* Glowing effect */
+    box-shadow: 0 0 15px #ff0000; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Beef Pickle - Purple Theme */
 .beef-pickle {
-    background: #f3e5f5; /* Very light purple */
+    background: #463c3c; /* Very light purple */
     border-color: #7b1fa2; /* Purple border */
 }
 
 .beef-pickle:hover {
-    box-shadow: 0 0 15px #7b1fa2; /* Glowing effect */
+    box-shadow: 0 0 15px #c300ff; /* Glowing effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
@@ -186,7 +186,7 @@ main {
     display: block;
     margin-top: 10px; /* Space above the availability text */
     font-size: 12px; /* Smaller font size */
-    color: #ffd700; /* Bright yellow gold */
+    color: #fee559; /* Bright yellow gold */
     text-align: center; /* Center the text */
     font-weight: bold; /* Make the text bold */
 }
@@ -245,7 +245,7 @@ footer {
     height: 100%;
     width: 0;
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
     background-color: #333;
     overflow-x: hidden;
@@ -317,7 +317,6 @@ footer {
     }
 }
 
-/* 9-Row, 1-Column Mobile Layout */
 @media screen and (max-width: 480px) {
     .grid-container {
         grid-template-columns: 1fr; /* 1 column */
@@ -337,3 +336,4 @@ footer {
         right: 5px;
     }
 }
+
