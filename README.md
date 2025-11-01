@@ -490,7 +490,7 @@ The content management system hook has about
    - Description
    - Icon
 the cms has these components 
-
+```
 ├── about
 ├── categories
 ├── error.tsx
@@ -500,6 +500,7 @@ the cms has these components
 ├── page.tsx
 ├── products
 └── users
+```
 the functionas are explanatory and readable.
 
 the sign-in and sign-up components just return the clerk element.
@@ -507,7 +508,7 @@ the sign-in and sign-up components just return the clerk element.
 #/store/components
 >cms 
 this contain element like 
-.
+```
 ├── CardContent.tsx
 ├── CategoryForm.tsx
 ├── CategoryItems.tsx
@@ -526,11 +527,12 @@ this contain element like
 ├── SideMenuLink.tsx
 ├── SideNavBar.tsx
 └── UploadedImage.tsx
+```
 some of the like Categories and client side renderd
 other are just basic compnonents these are for the cms 
 
 for the store front
-.
+```
 ├── AddToCart.tsx
 ├── aplus.tsx
 ├── AppleBanner.tsx
@@ -597,11 +599,13 @@ for the store front
 ├── video-conference.tsx
 ├── WobbleCard.tsx
 └── Wrapper.tsx
+```
 these are the components that are provided to the store
 >**IMPORTANT**
 
 ui contain elements and components for the main application
-.
+
+```
 ├── accordion.tsx
 ├── alert-dialog.tsx
 ├── alert.tsx
@@ -631,15 +635,18 @@ ui contain elements and components for the main application
 ├── textarea.tsx
 ├── tooltip.tsx
 └── wobble-card.tsx
+```
+
 ---
 #Emails
 this contains a large index.tsx file that gives out recipet email 
 #libs
+```
 ├── aplus-content.ts
 ├── isAdmin.ts
 ├── prisma.ts
 └── utils.ts
-
+```
 aplus-content is a predefined structor for valuble and select components
 this compnent is static at the moment and is not usable other that display maybe it needs implimentation
 
@@ -655,13 +662,13 @@ technology road
 
 #prisma contains the schemab as schema.prisma 
 #server-actions
-
+```
 ├── Category-Action.ts
 ├── Order-Actions.ts
 ├── Product-Actions.ts
 └── Upload-Image-Action.ts
+```
 have serverfunctions that are called
-
 
 Category-Action.ts
  this make actions like add categories and updating them 
