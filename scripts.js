@@ -197,7 +197,7 @@ function updateCartDisplay() {
             totalText = `₹${subtotal} + Shipping (TBD)`;
         } else {
             shippingCost = 70;
-            shippingNote.innerText = "Standard India Shipping: ₹70";
+            shippingNote.innerText = "Standard  Kerala Shipping: ₹70";
             shippingNote.style.color = "#666";
             totalText = `₹${subtotal + shippingCost}`;
         }
@@ -242,7 +242,7 @@ function setupEvents() {
         });
         
         msg += `%0aSubtotal: ₹${subtotal}`;
-        msg += `%0aShipping: ${shipping} ${isIntl ? '(Outside India)' : '(India Standard)'}`;
+        msg += `%0aShipping: ${shipping} ${isIntl ? '(Outside Kerala)' : '(Kerala Standard)'}`;
         msg += `%0a*Grand Total: ${total}*`;
         msg += "%0a%0aPlease confirm my order.";
 
