@@ -1,5 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
+// hello
 // --- DATA ---
 const products = [
     { id: "chicken-100", name: "Chicken Idiyirachi (100g Tin)", price: 235, image: "images/chicken_idiyirachi_250g_tin.jpg.jpeg", desc: "Dried & smoked finest chicken meat. Low fat, high protein." },
