@@ -1,0 +1,55 @@
+{
+  "name": "Malabar Idiyirachi",
+  "domain": "https://malabaridiyirachi.com",
+  "tagline": "Smoked meats and pickles from Kerala",
+  "phone": "919207220042",
+  "phoneDisplay": "+91 92072 20042",
+  "fssai": "",
+  "iso": "ISO 22000:2018",
+  "gaId": "",
+  "address": {
+    "line1": "Chaithanya Apartment, 40, New Kalavath Rd",
+    "line2": "Sonia Nagar, Palarivattom",
+    "city": "Ernakulam",
+    "state": "Kerala",
+    "pincode": ""
+  },
+  "geo": { "lat": 10.0134, "lng": 76.2937 },
+  "mapsUrl": "https://www.google.com/maps?q=Malabar+Idiyirachi,+Palarivattom,+Ernakulam,+Kerala",
+  "shipping": {
+    "keralaFlat": 70,
+    "keralaDays": "2–4 days",
+    "indiaDays": "4–7 days"
+  },
+  "story": {
+    "heading": "Made at home, the slow way",
+    "paragraphs": [
+      "Malabar Idiyirachi started in our family kitchen. We still make everything the same way — meat is slow-dried, smoked over wood, and pounded with roasted spices until it becomes the idiyirachi we grew up eating.",
+      "We cook in small batches with coconut oil and nothing artificial. Every jar is packed by hand and shipped out the same week it is made.",
+      "If you grew up in Malabar, you already know this taste. If you didn't, you're in for something special."
+    ]
+  },
+  "faq": [
+    {
+      "q": "How do I order?",
+      "a": "Add what you want to the cart and press “Send order on WhatsApp”. Your order and delivery address reach us as a WhatsApp message. We confirm, you pay by UPI or bank transfer, and we ship."
+    },
+    {
+      "q": "What does shipping cost?",
+      "a": "Flat ₹70 anywhere in Kerala. For other states we check the courier rate for your pincode and confirm it on WhatsApp before you pay anything."
+    },
+    {
+      "q": "How long does delivery take?",
+      "a": "Usually 2–4 days within Kerala and 4–7 days for the rest of India, depending on the courier."
+    },
+    {
+      "q": "How long do the products keep?",
+      "a": "Every jar has the packed date and use-by date printed on the label. After opening, keep it refrigerated and always use a dry spoon."
+    },
+    {
+      "q": "Is there anything artificial in it?",
+      "a": "No. Meat, coconut oil, spices and salt — that's it. No preservatives, no colours. Our kitchen is FSSAI licensed and ISO 22000:2018 certified."
+    }
+  ],
+  "testimonials": []
+}

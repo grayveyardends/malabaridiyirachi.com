@@ -1,0 +1,131 @@
+[
+  {
+    "slug": "idiyirachi",
+    "name": "Idiyirachi",
+    "tagline": "Dried, smoked buffalo meat — pounded with spices",
+    "category": "dried-meats",
+    "featured": true,
+    "sort": 1,
+    "badges": ["Bestseller", "No preservatives", "Ready to eat"],
+    "variants": [
+      { "id": "100g", "label": "100g", "price": 280 },
+      { "id": "250g", "label": "250g", "price": 700 }
+    ],
+    "description": [
+      "This is the classic. Buffalo meat is slow-dried, smoked over wood, and pounded with roasted spices until it turns into fine, smoky strands.",
+      "It's ready to eat straight from the jar. Have it with rice and kanji, mix it into fried rice, or just snack on it. A little goes a long way.",
+      "Made in small batches with coconut oil. No preservatives, no colours."
+    ],
+    "ingredients": "Buffalo meat, coconut oil, chilli, spices, curry leaves, salt",
+    "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
+    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "seoDescription": "Buy authentic Malabar Idiyirachi online — buffalo meat slow-dried, wood-smoked and pounded with spices. Made in small batches in Kerala, shipped across India."
+  },
+  {
+    "slug": "chicken-idiyirachi",
+    "name": "Chicken Idiyirachi",
+    "tagline": "Dried, smoked chicken — shredded fine",
+    "category": "dried-meats",
+    "featured": true,
+    "sort": 2,
+    "badges": ["No preservatives", "100% coconut oil", "High protein"],
+    "variants": [
+      { "id": "100g", "label": "100g", "price": 235 },
+      { "id": "250g", "label": "250g", "price": 585 }
+    ],
+    "description": [
+      "The lighter cousin of our classic idiyirachi. Chicken is dried, smoked and shredded fine with roasted spices.",
+      "Lower in fat, high in protein, and just as addictive. Great with rice, inside a sandwich, or straight from the jar.",
+      "Cooked in 100% coconut oil with no preservatives."
+    ],
+    "ingredients": "Chicken, coconut oil, chilli, spices, curry leaves, salt",
+    "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
+    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "seoDescription": "Buy Chicken Idiyirachi online — dried, wood-smoked chicken shredded with Kerala spices. Low fat, high protein, no preservatives. Ships across India."
+  },
+  {
+    "slug": "meat-cheenth",
+    "name": "Meat Cheenth",
+    "tagline": "Chunky dried buffalo meat — bold and flavourful",
+    "category": "dried-meats",
+    "featured": true,
+    "sort": 3,
+    "badges": ["No preservatives", "Ready to eat"],
+    "variants": [
+      { "id": "100g", "label": "100g", "price": 305 },
+      { "id": "250g", "label": "250g", "price": 760 }
+    ],
+    "description": [
+      "Cheenth means torn — buffalo meat pulled into bigger, chunkier pieces than idiyirachi, so every bite is more meaty and more intense.",
+      "If you like your dried meat with real texture and a deep smoky kick, this is the one to get.",
+      "Made in small batches with coconut oil and roasted spices. Nothing artificial."
+    ],
+    "ingredients": "Buffalo meat, coconut oil, chilli, spices, curry leaves, salt",
+    "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
+    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "seoDescription": "Buy Meat Cheenth online — chunky dried buffalo meat made the traditional Malabar way. Bold, smoky and preservative-free. Ships across India."
+  },
+  {
+    "slug": "beef-pickle",
+    "name": "Beef Pickle",
+    "tagline": "Kerala-style beef achar — roasted in spices and vinegar",
+    "category": "pickles",
+    "featured": false,
+    "sort": 4,
+    "badges": ["No preservatives", "Homemade"],
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 700 }
+    ],
+    "description": [
+      "Tender beef, wet-roasted with spices and finished in vinegar the way it's done in Kerala homes.",
+      "A spoonful next to rice, kanji or biryani changes the whole meal. Tangy, spicy and full of meat.",
+      "Made in small batches. No preservatives — the vinegar and oil do the work."
+    ],
+    "ingredients": "Beef, gingelly oil, vinegar, chilli, ginger, garlic, spices, curry leaves, salt",
+    "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
+    "serves": "500g serves 20–22",
+    "seoDescription": "Buy homemade Kerala Beef Pickle (achar) online — beef wet-roasted with spices and vinegar. No preservatives. Ships across India."
+  },
+  {
+    "slug": "fish-pickle",
+    "name": "Fish Pickle",
+    "tagline": "Fried fish achar with a tangy kick",
+    "category": "pickles",
+    "featured": false,
+    "sort": 5,
+    "badges": ["No preservatives", "Homemade"],
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 700 }
+    ],
+    "description": [
+      "Fresh fish is marinated, fried, and folded into a spicy, tangy pickle masala.",
+      "It keeps the fried-fish bite while soaking up all that achar flavour. Perfect with rice and curd, or kanji on a rainy day.",
+      "Made in small batches with no preservatives."
+    ],
+    "ingredients": "Fish, gingelly oil, vinegar, chilli, ginger, garlic, spices, curry leaves, salt",
+    "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
+    "serves": "500g serves 20–22",
+    "seoDescription": "Buy homemade Kerala Fish Pickle online — fried fish in a tangy, spicy achar masala. No preservatives. Ships across India."
+  },
+  {
+    "slug": "kovakka-fry",
+    "name": "Kovakka Fry",
+    "tagline": "Crispy fried ivy gourd — the vegetarian favourite",
+    "category": "veg",
+    "featured": false,
+    "sort": 6,
+    "badges": ["Vegetarian", "No preservatives"],
+    "variants": [
+      { "id": "500g", "label": "500g", "price": 250 }
+    ],
+    "description": [
+      "Ivy gourd (kovakka), sliced thin and fried crisp with spices — a Malabar side dish that disappears fast.",
+      "Sprinkle it over rice or eat it like a snack. Either way, one jar is never enough.",
+      "Vegetarian, made in small batches, no preservatives."
+    ],
+    "ingredients": "Ivy gourd (kovakka), coconut oil, chilli, spices, salt",
+    "shelfLife": "See packed date and use-by date on the label. Keep sealed and dry.",
+    "serves": "500g serves 8–10",
+    "seoDescription": "Buy Kovakka Fry (crispy fried ivy gourd) online — a crunchy, spicy Malabar vegetarian side. No preservatives. Ships across India."
+  }
+]
