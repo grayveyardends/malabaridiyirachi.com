@@ -8,10 +8,17 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 /* ---- header badge ---- */
 const badge = $('[data-cart-badge]');
+let lastCount = null;
 function renderBadge() {
   const n = cart.count();
   badge.textContent = n;
   badge.hidden = n === 0;
+  if (lastCount !== null && n > lastCount) {
+    badge.classList.remove('pop');
+    void badge.offsetWidth; // restart the animation
+    badge.classList.add('pop');
+  }
+  lastCount = n;
 }
 
 /* ---- cart drawer ---- */

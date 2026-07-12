@@ -8,8 +8,8 @@
     "sort": 1,
     "badges": ["Bestseller", "No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "100g", "label": "100g", "price": 280 },
-      { "id": "250g", "label": "250g", "price": 700 }
+      { "id": "250g", "label": "250g", "price": 700 },
+      { "id": "100g", "label": "100g", "price": 280 }
     ],
     "description": [
       "This is the classic. Buffalo meat is slow-dried, smoked over wood, and pounded with roasted spices until it turns into fine, smoky strands.",
@@ -18,7 +18,7 @@
     ],
     "ingredients": "Buffalo meat, coconut oil, chilli, spices, curry leaves, salt",
     "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
-    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "serves": "250g serves 13–14 · 100g serves 5–6",
     "seoDescription": "Buy authentic Malabar Idiyirachi online — buffalo meat slow-dried, wood-smoked and pounded with spices. Made in small batches in Kerala, shipped across India."
   },
   {
@@ -30,8 +30,8 @@
     "sort": 2,
     "badges": ["No preservatives", "100% coconut oil", "High protein"],
     "variants": [
-      { "id": "100g", "label": "100g", "price": 235 },
-      { "id": "250g", "label": "250g", "price": 585 }
+      { "id": "250g", "label": "250g", "price": 585 },
+      { "id": "100g", "label": "100g", "price": 235 }
     ],
     "description": [
       "The lighter cousin of our classic idiyirachi. Chicken is dried, smoked and shredded fine with roasted spices.",
@@ -40,7 +40,7 @@
     ],
     "ingredients": "Chicken, coconut oil, chilli, spices, curry leaves, salt",
     "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
-    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "serves": "250g serves 13–14 · 100g serves 5–6",
     "seoDescription": "Buy Chicken Idiyirachi online — dried, wood-smoked chicken shredded with Kerala spices. Low fat, high protein, no preservatives. Ships across India."
   },
   {
@@ -52,8 +52,8 @@
     "sort": 3,
     "badges": ["No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "100g", "label": "100g", "price": 305 },
-      { "id": "250g", "label": "250g", "price": 760 }
+      { "id": "250g", "label": "250g", "price": 760 },
+      { "id": "100g", "label": "100g", "price": 305 }
     ],
     "description": [
       "Cheenth means torn — buffalo meat pulled into bigger, chunkier pieces than idiyirachi, so every bite is more meaty and more intense.",
@@ -62,7 +62,7 @@
     ],
     "ingredients": "Buffalo meat, coconut oil, chilli, spices, curry leaves, salt",
     "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
-    "serves": "100g serves 5–6 · 250g serves 13–14",
+    "serves": "250g serves 13–14 · 100g serves 5–6",
     "seoDescription": "Buy Meat Cheenth online — chunky dried buffalo meat made the traditional Malabar way. Bold, smoky and preservative-free. Ships across India."
   },
   {

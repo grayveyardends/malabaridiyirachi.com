@@ -7,10 +7,13 @@ export function homePage(ctx) {
 
   return `
   <section class="hero">
+    <i class="deco deco-chilli deco-1" aria-hidden="true"></i>
+    <i class="deco deco-leaf deco-2" aria-hidden="true"></i>
+    <i class="deco deco-leaf deco-3" aria-hidden="true"></i>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="hero-kicker">From Kerala, with smoke</p>
-        <h1>Smoked the old way.<br>Loved the same way.</h1>
+        <h1>Smoked the <span class="brush">old&nbsp;way</span>.<br>Loved the same way.</h1>
         <p class="hero-sub">Idiyirachi, meat cheenth and homemade pickles — dried, smoked and pounded the way it's always been done in Malabar. Shipped anywhere in India.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="#shop">Shop the range</a>
@@ -18,6 +21,7 @@ export function homePage(ctx) {
         </div>
       </div>
       <div class="hero-media">
+        <div class="smoke" aria-hidden="true"><i></i><i></i><i></i></div>
         ${picture(siteImages.hero, { alt: 'A plate of Malabar idiyirachi', sizes: '(min-width: 900px) 520px, 85vw', lazy: false })}
       </div>
     </div>
@@ -40,6 +44,8 @@ export function homePage(ctx) {
   </section>
 
   <section class="section story" id="story">
+    <i class="deco deco-leaf deco-4" aria-hidden="true"></i>
+    <i class="deco deco-chilli deco-5" aria-hidden="true"></i>
     <div class="wrap story-grid">
       <div class="story-media reveal">
         ${picture(siteImages.storyPlate, { alt: 'Idiyirachi served with curry leaves, ginger and lime', sizes: '(min-width: 900px) 480px, 90vw' })}

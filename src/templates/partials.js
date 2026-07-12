@@ -58,12 +58,14 @@ export function badgeChips(badges) {
 
 // Product card for grids. Whole card links to the product page;
 // single-variant products also get a quick add-to-cart button.
+// The first variant is the one the business wants to lead with (250g packs),
+// so the card shows its price rather than the cheapest one.
 export function productCard(p) {
-  const from = p.variants.length > 1;
-  const minPrice = Math.min(...p.variants.map((v) => v.price));
-  const action = from
+  const multi = p.variants.length > 1;
+  const lead = p.variants[0];
+  const action = multi
     ? `<span class="card-cta">Choose size</span>`
-    : `<button class="btn-quick-add" type="button" data-add data-slug="${p.slug}" data-variant="${p.variants[0].id}" aria-label="Add ${esc(p.name)} to cart">Add to cart</button>`;
+    : `<button class="btn-quick-add" type="button" data-add data-slug="${p.slug}" data-variant="${lead.id}" aria-label="Add ${esc(p.name)} to cart">Add to cart</button>`;
   return `<article class="card reveal" data-category="${p.category}">
     <a class="card-media" href="${p.url}" tabindex="-1" aria-hidden="true">
       ${picture(p.images[0], { alt: p.name, sizes: '(min-width: 900px) 300px, (min-width: 640px) 45vw, 90vw' })}
@@ -73,7 +75,7 @@ export function productCard(p) {
       <h3 class="card-name"><a href="${p.url}">${esc(p.name)}</a></h3>
       <p class="card-tagline">${esc(p.tagline)}</p>
       <div class="card-foot">
-        <span class="card-price">${from ? `<small>from</small> ` : ''}${inr(minPrice)}</span>
+        <span class="card-price">${inr(lead.price)} <small>· ${esc(lead.label)}</small></span>
         ${action}
       </div>
     </div>
@@ -89,7 +91,7 @@ export function trustStrip(site) {
   ];
   return `<section class="trust" aria-label="Why buy from us">
     <ul class="trust-list">
-      ${items.map((i) => `<li>${icon(i.ic)}<span>${esc(i.label)}</span></li>`).join('')}
+      ${items.map((i) => `<li class="reveal">${icon(i.ic)}<span>${esc(i.label)}</span></li>`).join('')}
     </ul>
   </section>`;
 }

@@ -70,6 +70,16 @@ button { font: inherit; cursor: pointer; }
 .section { padding-block: var(--s7); }
 .section-sub { color: var(--c-muted); margin-top: calc(-1 * var(--s3)); }
 
+/* spice-gold flourish under section headings */
+.section > .wrap > h2::after,
+.section > h2::after,
+.story-copy h2::after {
+  content: ""; display: block;
+  width: 58px; height: 4px; margin-top: var(--s3);
+  background: linear-gradient(90deg, var(--c-gold), var(--c-chilli));
+  border-radius: 2px;
+}
+
 .skip-link {
   position: absolute; left: -999px; top: 0; z-index: 100;
   background: var(--c-bark); color: var(--c-cream); padding: var(--s2) var(--s4);
@@ -90,6 +100,15 @@ button { font: inherit; cursor: pointer; }
   transition: background 0.15s, border-color 0.15s, transform 0.1s;
 }
 .btn:active { transform: translateY(1px); }
+/* shine sweep across primary buttons on hover */
+.btn-primary, .btn-wa { position: relative; overflow: hidden; }
+.btn-primary::after, .btn-wa::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -70%; width: 45%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-primary:hover::after, .btn-wa:hover::after { left: 125%; }
 .btn-lg { padding: 13px 26px; font-size: 1.02rem; }
 .btn-block { width: 100%; }
 .btn-primary { background: var(--c-chilli); color: var(--c-cream); }
@@ -145,6 +164,8 @@ button { font: inherit; cursor: pointer; }
   border-radius: 999px;
   font-size: 0.7rem; font-weight: 600; line-height: 18px; text-align: center;
 }
+.cart-badge.pop { animation: badge-pop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }
+@keyframes badge-pop { 45% { transform: scale(1.5); } }
 
 .menu-btn { display: none; }
 
@@ -164,6 +185,7 @@ button { font: inherit; cursor: pointer; }
 
 /* ---- hero ---- */
 .hero {
+  position: relative;
   background: radial-gradient(ellipse 80% 90% at 75% 20%, var(--c-bark-2), var(--c-bark) 65%);
   color: var(--c-cream);
   overflow: hidden;
@@ -185,8 +207,80 @@ button { font: inherit; cursor: pointer; }
   content: ""; position: absolute; inset: 8%;
   background: radial-gradient(circle, rgba(201, 138, 45, 0.28), transparent 70%);
   border-radius: 50%;
+  animation: glow-breathe 6s ease-in-out infinite;
 }
 .hero-media img { position: relative; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45)); }
+.hero-media picture { display: block; animation: bob 7s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-10px); } }
+@keyframes glow-breathe { 50% { opacity: 0.55; transform: scale(1.06); } }
+
+/* smoke wisps rising off the plate */
+.smoke { position: absolute; left: 50%; top: 6%; z-index: 2; }
+.smoke i {
+  position: absolute; bottom: 0;
+  width: 16px; height: 48px;
+  background: rgba(251, 245, 234, 0.16);
+  border-radius: 50%;
+  filter: blur(7px);
+  animation: rise-smoke 5.5s ease-in-out infinite;
+}
+.smoke i:nth-child(2) { left: -26px; height: 38px; animation-delay: 1.8s; animation-duration: 6.5s; }
+.smoke i:nth-child(3) { left: 24px; height: 42px; animation-delay: 3.4s; animation-duration: 6s; }
+@keyframes rise-smoke {
+  0% { transform: translateY(10px) scaleY(0.6); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-110px) translateX(14px) scaleY(1.5) scaleX(1.6); opacity: 0; }
+}
+
+/* brush-stroke highlight behind a headline word */
+.brush { position: relative; z-index: 0; white-space: nowrap; }
+.brush::after {
+  content: ""; position: absolute; z-index: -1;
+  left: -3%; right: -3%; bottom: 0.06em; height: 0.34em;
+  background: linear-gradient(90deg, rgba(201, 138, 45, 0), rgba(201, 138, 45, 0.6) 15%, rgba(180, 50, 42, 0.55) 85%, rgba(180, 50, 42, 0));
+  border-radius: 4px;
+  transform: skewX(-14deg) rotate(-1deg);
+  transform-origin: left;
+  animation: brush-in 0.9s 0.5s ease both;
+}
+@keyframes brush-in { from { transform: skewX(-14deg) rotate(-1deg) scaleX(0); } }
+
+/* ---- CSS food art: chillies and curry leaves ---- */
+.deco { position: absolute; pointer-events: none; opacity: 0.85; }
+.deco-chilli {
+  width: 48px; height: 15px;
+  background: linear-gradient(100deg, #C74232, #8E2419);
+  border-radius: 46% 60% 62% 50% / 55% 95% 100% 45%;
+  animation: sway 9s ease-in-out infinite;
+}
+.deco-chilli::before { /* stem */
+  content: ""; position: absolute; left: -9px; top: 1px;
+  width: 14px; height: 7px;
+  background: var(--c-leaf);
+  border-radius: 40% 60% 60% 40% / 60% 60% 40% 40%;
+  transform: rotate(-24deg);
+}
+.deco-leaf {
+  width: 38px; height: 15px;
+  background: linear-gradient(120deg, #3E6049, #2F4A38);
+  border-radius: 2% 98% 2% 98% / 50% 50% 50% 50%;
+  animation: sway 11s ease-in-out infinite reverse;
+}
+.deco-leaf::before { /* centre vein */
+  content: ""; position: absolute; left: 8%; right: 8%; top: 48%;
+  height: 1px; background: rgba(251, 245, 234, 0.35);
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-8px) rotate(calc(var(--r, 0deg) + 9deg)); }
+}
+
+.deco-1 { top: 14%; right: 6%; --r: -30deg; }
+.deco-2 { bottom: 16%; left: 4%; --r: 15deg; opacity: 0.5; }
+.deco-3 { top: 22%; left: 42%; --r: -60deg; opacity: 0.35; }
+.deco-4 { top: 10%; right: 8%; --r: -20deg; opacity: 0.5; }
+.deco-5 { bottom: 12%; left: 46%; --r: 25deg; opacity: 0.55; }
+@media (max-width: 639px) { .deco { display: none; } }
 
 /* soft entrance */
 .hero-copy, .hero-media { animation: rise 0.7s ease both; }
@@ -217,6 +311,12 @@ button { font: inherit; cursor: pointer; }
 }
 .trust-list .icon { color: var(--c-leaf); }
 @media (min-width: 640px) { .trust-list { grid-template-columns: repeat(4, 1fr); } }
+
+/* subtle spice-dot texture behind the shop grid */
+.shop {
+  background-image: radial-gradient(rgba(201, 138, 45, 0.09) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
 
 /* ---- filter pills ---- */
 .filter-row { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s5); }
@@ -249,9 +349,16 @@ button { font: inherit; cursor: pointer; }
 }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-.card-media { display: block; aspect-ratio: 4 / 5; background: #EFEDE8; position: relative; }
-.card-media img { width: 100%; height: 100%; object-fit: cover; }
+.card-media { display: block; aspect-ratio: 4 / 5; background: #EFEDE8; position: relative; overflow: hidden; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card:hover .card-media img { transform: scale(1.06); }
 .card-media picture { display: contents; }
+/* warm glaze at the bottom of the photo so it melts into the card */
+.card-media::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 30%;
+  background: linear-gradient(to top, rgba(44, 30, 20, 0.14), transparent);
+  pointer-events: none;
+}
 
 .card-flag {
   position: absolute; top: var(--s3); left: var(--s3);
@@ -282,7 +389,13 @@ button { font: inherit; cursor: pointer; }
 .btn-quick-add:hover { background: var(--c-chilli-dark); }
 
 /* ---- story ---- */
-.story { background: var(--c-sand); }
+.story {
+  background: var(--c-sand);
+  position: relative;
+  /* kasavu-style double gold border, like a Kerala mundu */
+  border-top: 1px solid var(--c-gold);
+  box-shadow: inset 0 5px 0 -3px var(--c-gold);
+}
 .story-grid { display: grid; gap: var(--s6); align-items: center; }
 .story-media img { filter: drop-shadow(0 16px 32px rgba(44, 30, 20, 0.25)); }
 .story-cert { color: var(--c-leaf); font-weight: 600; font-size: 0.9rem; }
@@ -327,9 +440,15 @@ button { font: inherit; cursor: pointer; }
 }
 .faq-list details[open] summary::after { transform: rotate(45deg); }
 .faq-list details p { padding: 0 var(--s5) var(--s4); margin: 0; color: var(--c-ink); }
+.faq-list details[open] p { animation: fade-in 0.35s ease; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(-4px); } }
 
 /* ---- footer ---- */
-.site-footer { background: var(--c-bark); color: rgba(251, 245, 234, 0.85); margin-top: var(--s7); }
+.site-footer {
+  background: var(--c-bark); color: rgba(251, 245, 234, 0.85); margin-top: var(--s7);
+  border-top: 1px solid var(--c-gold);
+  box-shadow: inset 0 5px 0 -3px var(--c-gold);
+}
 .footer-grid {
   display: grid; gap: var(--s6);
   padding-block: var(--s7) var(--s5);
@@ -358,6 +477,14 @@ button { font: inherit; cursor: pointer; }
 }
 .wa-float:hover { transform: scale(1.08); }
 .wa-float .icon svg { width: 28px; height: 28px; }
+.wa-float::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  animation: wa-ping 3.2s ease-out infinite;
+}
+@keyframes wa-ping {
+  0% { box-shadow: 0 0 0 0 rgba(29, 168, 81, 0.45); }
+  55%, 100% { box-shadow: 0 0 0 16px rgba(29, 168, 81, 0); }
+}
 
 /* ---- cart drawer ---- */
 .drawer-overlay {
@@ -545,9 +672,28 @@ label.is-invalid input, label.is-invalid textarea { border-color: var(--c-chilli
 .notfound { text-align: center; padding-block: var(--s8); }
 .notfound p { color: var(--c-muted); margin-bottom: var(--s5); }
 
-/* ---- reveal on scroll (only hidden when JS is running) ---- */
-.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.js .reveal.in-view { opacity: 1; transform: none; }
+/* ---- reveal on scroll (only hidden when JS is running) ----
+   Uses a one-shot animation (not a transition) so it never interferes
+   with the elements' own hover transitions. The final keyframe omits
+   transform on purpose: after the reveal, hover transforms take over. */
+.js .reveal { opacity: 0; }
+.js .reveal.in-view { animation: reveal-in 0.55s ease var(--rd, 0ms) both; }
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; }
+}
+
+/* stagger cards and trust items that reveal together */
+.grid > :nth-child(2), .trust-list li:nth-child(2) { --rd: 80ms; }
+.grid > :nth-child(3), .trust-list li:nth-child(3) { --rd: 160ms; }
+.grid > :nth-child(4), .trust-list li:nth-child(4) { --rd: 240ms; }
+.grid > :nth-child(5) { --rd: 320ms; }
+.grid > :nth-child(6) { --rd: 400ms; }
+
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal { opacity: 1; }
+  .js .reveal.in-view { animation: none; }
+  .hero-media picture, .hero-media::before, .smoke i,
+  .deco, .wa-float::before, .brush::after, .cart-badge.pop { animation: none; }
+  .smoke { display: none; }
 }
