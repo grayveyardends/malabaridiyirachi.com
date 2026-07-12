@@ -6,8 +6,24 @@ import { esc, icon, whatsappHref } from './partials.js';
 export function layout(opts) {
   const {
     site, title, description, path, ogImage, jsonLd = [],
-    noindex = false, bodyClass = '', content, scripts = [], catalog
+    noindex = false, bodyClass = '', content, scripts = [], catalog,
+    intro = false
   } = opts;
+
+  // Branded entrance curtain: shows once per session on pages that ask
+  // for it, dismisses itself via CSS animation. The inline script removes
+  // it instantly on repeat visits or when the user prefers reduced motion.
+  const introHtml = intro
+    ? `<div class="intro" aria-hidden="true">
+    <div class="intro-inner">
+      <div class="smoke intro-smoke"><i></i><i></i></div>
+      <img src="/images/site/logo.png" alt="" width="84" height="67">
+      <p class="intro-name">${esc(site.name)}</p>
+      <p class="intro-tag">smoked · homemade · Kerala</p>
+    </div>
+  </div>
+  <script>try{if(sessionStorage.getItem('miIntro')||matchMedia('(prefers-reduced-motion: reduce)').matches){document.currentScript.previousElementSibling.remove()}else{sessionStorage.setItem('miIntro','1')}}catch(e){document.currentScript.previousElementSibling.remove()}</script>`
+    : '';
 
   const url = site.domain + path;
   const ga = site.gaId
@@ -49,6 +65,7 @@ export function layout(opts) {
   ${ga}
 </head>
 <body${bodyClass ? ` class="${bodyClass}"` : ''}>
+  ${introHtml}
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="announce">₹70 flat shipping across Kerala&ensp;·&ensp;Ships all over India</div>

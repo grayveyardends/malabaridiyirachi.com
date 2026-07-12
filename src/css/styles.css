@@ -118,12 +118,55 @@ button { font: inherit; cursor: pointer; }
 .btn-wa { background: var(--c-wa); color: #fff; }
 .btn-wa:hover { background: var(--c-wa-dark); }
 
+/* ---- intro entrance curtain (home, once per session) ---- */
+.intro { display: none; }
+.js .intro {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse 90% 90% at 50% 30%, var(--c-bark-2), var(--c-bark) 75%);
+  animation: intro-leave 0.65s cubic-bezier(0.7, 0, 0.3, 1) 1.7s both;
+}
+@keyframes intro-leave {
+  to { transform: translateY(-101%); visibility: hidden; }
+}
+.intro-inner {
+  position: relative; text-align: center; color: var(--c-cream);
+  animation: intro-pop 0.7s cubic-bezier(0.2, 1.4, 0.5, 1) both;
+}
+@keyframes intro-pop { from { opacity: 0; transform: scale(0.8); } }
+.intro-inner img { margin: 0 auto var(--s3); }
+.intro-name {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.6rem;
+  margin: 0 0 var(--s1);
+}
+.intro-tag {
+  margin: 0; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--c-gold), #E08A52);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.intro-smoke { position: absolute; left: 50%; top: -30px; }
+
+/* ---- rotating headline word ---- */
+.rotator {
+  display: inline-block;
+  background: linear-gradient(100deg, var(--c-gold), #E85D45);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  transition: opacity 0.26s ease, transform 0.26s ease;
+}
+.rotator.is-out { opacity: 0; transform: translateY(-0.45em); }
+.rotator.is-in { animation: word-in 0.38s ease; }
+@keyframes word-in { from { opacity: 0; transform: translateY(0.45em); } }
+
 /* ---- announcement + header ---- */
 .announce {
-  background: var(--c-leaf); color: var(--c-cream);
+  background: linear-gradient(90deg, var(--c-leaf), #3E6049 30%, var(--c-leaf) 60%, #3E6049);
+  background-size: 200% 100%;
+  animation: announce-shimmer 9s linear infinite;
+  color: var(--c-cream);
   text-align: center; font-size: 0.82rem; font-weight: 500;
   padding: 6px var(--s4);
 }
+@keyframes announce-shimmer { to { background-position: -200% 0; } }
 
 .site-header {
   position: sticky; top: 0; z-index: 50;
@@ -186,7 +229,10 @@ button { font: inherit; cursor: pointer; }
 /* ---- hero ---- */
 .hero {
   position: relative;
-  background: radial-gradient(ellipse 80% 90% at 75% 20%, var(--c-bark-2), var(--c-bark) 65%);
+  background:
+    radial-gradient(ellipse 55% 65% at 12% 90%, rgba(180, 50, 42, 0.22), transparent 65%),
+    radial-gradient(ellipse 45% 55% at 90% 85%, rgba(47, 74, 56, 0.35), transparent 65%),
+    radial-gradient(ellipse 80% 90% at 75% 20%, var(--c-bark-2), var(--c-bark) 65%);
   color: var(--c-cream);
   overflow: hidden;
 }
@@ -309,7 +355,10 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.88rem; font-weight: 500;
   justify-content: center;
 }
-.trust-list .icon { color: var(--c-leaf); }
+.trust-list li:nth-child(1) .icon { color: var(--c-leaf); }
+.trust-list li:nth-child(2) .icon { color: var(--c-gold); }
+.trust-list li:nth-child(3) .icon { color: #4C8C5C; }
+.trust-list li:nth-child(4) .icon { color: var(--c-chilli); }
 @media (min-width: 640px) { .trust-list { grid-template-columns: repeat(4, 1fr); } }
 
 /* subtle spice-dot texture behind the shop grid */
@@ -328,7 +377,7 @@ button { font: inherit; cursor: pointer; }
   transition: all 0.15s;
 }
 .pill:hover { border-color: var(--c-gold); }
-.pill.is-active { background: var(--c-bark); border-color: var(--c-bark); color: var(--c-cream); }
+.pill.is-active { background: var(--c-chilli); border-color: var(--c-chilli); color: var(--c-cream); }
 
 /* ---- product grid + cards ---- */
 .grid {
@@ -347,7 +396,7 @@ button { font: inherit; cursor: pointer; }
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex; flex-direction: column;
 }
-.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card:hover { transform: translateY(-4px) rotate(-0.5deg); box-shadow: var(--shadow-lg); }
 
 .card-media { display: block; aspect-ratio: 4 / 5; background: #EFEDE8; position: relative; overflow: hidden; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -377,7 +426,7 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
 }
 .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--s3); }
-.card-price { font-weight: 700; font-size: 1.05rem; color: var(--c-bark); }
+.card-price { font-weight: 700; font-size: 1.05rem; color: var(--c-chilli); }
 .card-price small { color: var(--c-muted); font-weight: 500; }
 .card-cta { color: var(--c-chilli); font-weight: 600; font-size: 0.9rem; }
 .btn-quick-add {
@@ -419,6 +468,10 @@ button { font: inherit; cursor: pointer; }
 }
 .delivery-card h3 { margin-bottom: var(--s2); }
 .delivery-card p { margin: 0; }
+.delivery-card:nth-child(1) { border-left-color: var(--c-leaf); }
+.delivery-card:nth-child(1) h3 { color: var(--c-leaf); }
+.delivery-card:nth-child(2) { border-left-color: var(--c-chilli); }
+.delivery-card:nth-child(2) h3 { color: var(--c-chilli); }
 @media (min-width: 640px) { .delivery-grid { grid-template-columns: 1fr 1fr; } }
 
 /* ---- FAQ ---- */
@@ -694,6 +747,8 @@ label.is-invalid input, label.is-invalid textarea { border-color: var(--c-chilli
   .js .reveal { opacity: 1; }
   .js .reveal.in-view { animation: none; }
   .hero-media picture, .hero-media::before, .smoke i,
-  .deco, .wa-float::before, .brush::after, .cart-badge.pop { animation: none; }
+  .deco, .wa-float::before, .brush::after, .cart-badge.pop,
+  .announce, .intro-inner { animation: none; }
   .smoke { display: none; }
+  .announce { background: var(--c-leaf); }
 }

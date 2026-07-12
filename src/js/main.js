@@ -6,6 +6,25 @@ import * as cart from './cart.js';
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- rotating headline word (home hero) ---- */
+const rotator = $('.rotator');
+if (rotator && !reduce) {
+  const words = rotator.dataset.words.split(',');
+  let i = 0;
+  setInterval(() => {
+    rotator.classList.add('is-out');
+    setTimeout(() => {
+      i = (i + 1) % words.length;
+      rotator.textContent = words[i];
+      rotator.classList.remove('is-out');
+      rotator.classList.add('is-in');
+      setTimeout(() => rotator.classList.remove('is-in'), 400);
+    }, 280);
+  }, 2800);
+}
+
 /* ---- header badge ---- */
 const badge = $('[data-cart-badge]');
 let lastCount = null;
@@ -136,7 +155,6 @@ if (grid) {
 }
 
 /* ---- reveal on scroll ---- */
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (reduce) {
   $$('.reveal').forEach((el) => el.classList.add('in-view'));
 } else {

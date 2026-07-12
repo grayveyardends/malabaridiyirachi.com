@@ -218,6 +218,7 @@ function page(relPath, html) {
 
 page('index.html', layout({
   site, catalog, productLinks,
+  intro: true,
   title: `${site.name} | Kerala Smoked Meat, Idiyirachi & Pickles`,
   description: 'Authentic Malabar Idiyirachi, Meat Cheenth and homemade pickles — slow-dried, wood-smoked, made in small batches in Kerala and shipped all over India.',
   path: '/',

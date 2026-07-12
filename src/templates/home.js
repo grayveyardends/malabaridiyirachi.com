@@ -13,7 +13,7 @@ export function homePage(ctx) {
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="hero-kicker">From Kerala, with smoke</p>
-        <h1>Smoked the <span class="brush">old&nbsp;way</span>.<br>Loved the same way.</h1>
+        <h1>Smoked the <span class="brush">old&nbsp;way</span>.<br>Made with <span class="rotator" data-words="tradition,smoke,spice,love,memories">tradition</span>.</h1>
         <p class="hero-sub">Idiyirachi, meat cheenth and homemade pickles — dried, smoked and pounded the way it's always been done in Malabar. Shipped anywhere in India.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="#shop">Shop the range</a>
