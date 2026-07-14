@@ -11,6 +11,12 @@
       { "id": "250g", "label": "250g", "price": 650 },
       { "id": "100g", "label": "100g", "price": 260 }
     ],
+    "photos": [
+      "images/site/imageofcontent.jpeg",
+      "images/site/usageimage.jpeg",
+      "images/site/bg_for_top.jpeg",
+      "images/site/demoimage3.jpeg"
+    ],
     "description": [
       "This is the classic. Buffalo meat is slow-dried, smoked over wood, and pounded with roasted spices until it turns into fine, smoky strands.",
       "It's ready to eat straight from the jar. Have it with rice and kanji, mix it into fried rice, or just snack on it. A little goes a long way.",
@@ -54,6 +60,10 @@
     "variants": [
       { "id": "250g", "label": "250g", "price": 700 },
       { "id": "100g", "label": "100g", "price": 280 }
+    ],
+    "photos": [
+      "images/site/meatcheenth.jpeg",
+      "images/site/demimage2.jpeg"
     ],
     "description": [
       "Cheenth means torn — buffalo meat pulled into bigger, chunkier pieces than idiyirachi, so every bite is more meaty and more intense.",

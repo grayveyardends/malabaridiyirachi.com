@@ -52,6 +52,12 @@ for (const p of products) {
   const files = fs.readdirSync(dir).filter((f) => IMG_EXT.test(f)).sort();
   if (files.length === 0) fail(`images/products/${p.slug}/ has no photos. Add at least one .jpg or .png.`);
   p.sourceImages = files.map((f) => path.join(dir, f));
+  // Optional "photos" list: extra shots that live outside the product folder
+  // (a styled photo reused from images/site/, say). Appended after the folder's own.
+  for (const rel of p.photos ?? []) {
+    if (!fs.existsSync(path.join(ROOT, rel))) fail(`Product "${p.slug}" lists a photo that does not exist: ${rel}`);
+    p.sourceImages.push(path.join(ROOT, rel));
+  }
 }
 products.sort((a, b) => (a.sort ?? 99) - (b.sort ?? 99));
 
@@ -130,16 +136,30 @@ for (const p of products) {
   p.url = `/products/${p.slug}/`;
 }
 
-/* site images */
-const siteImages = {
-  hero: await processImage('images/site/hero.png', 'images/site', { fallbackExt: 'png' }),
-  storyPlate: await processImage('images/site/story-plate.png', 'images/site', { fallbackExt: 'png' })
-};
+/* site images — every path comes from site.json, so the owner can swap a
+   photo by editing data alone. Cached: the same file is often used twice
+   (hero background and a carousel slide, say) and must only be built once. */
+const siteImageCache = new Map();
+async function siteImage(rel) {
+  if (!fs.existsSync(path.join(ROOT, rel))) fail(`site.json points at an image that does not exist: ${rel}`);
+  if (!siteImageCache.has(rel)) {
+    siteImageCache.set(rel, await processImage(rel, path.dirname(rel)));
+  }
+  return siteImageCache.get(rel);
+}
 
-/* home OG image: hero on bark background, 1200x630 */
-await sharp('images/site/hero.png')
-  .resize(1200, 630, { fit: 'contain', background: '#2C1E14' })
-  .flatten({ background: '#2C1E14' })
+const siteImages = {};
+for (const [key, rel] of Object.entries(site.images)) siteImages[key] = await siteImage(rel);
+
+const gallery = [];
+for (const g of site.gallery) gallery.push({ ...g, img: await siteImage(g.src) });
+
+const certs = [];
+for (const c of site.certs) certs.push({ ...c, img: await siteImage(c.src) });
+
+/* home OG image: the range, cropped to the 1200x630 WhatsApp/Google card */
+await sharp('images/site/wideheroimage.jpeg')
+  .resize(1200, 630, { fit: 'cover' })
   .jpeg({ quality: 82 })
   .toFile(outPath('images/site/home-og.jpg'));
 
@@ -163,7 +183,7 @@ const productLinks = products
   .map((p) => `<a href="${p.url}">${esc(p.name)}</a>`)
   .join('\n        ');
 
-const ctx = { site, products, siteImages };
+const ctx = { site, products, siteImages, gallery, certs };
 
 /* ---------- JSON-LD ---------- */
 const businessLd = {

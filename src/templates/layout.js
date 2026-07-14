@@ -1,4 +1,4 @@
-import { esc, icon, whatsappHref } from './partials.js';
+import { esc, inr, icon, whatsappHref } from './partials.js';
 
 // Full HTML document shell shared by every page.
 // opts = { site, title, description, path, ogImage, jsonLd, noindex,
@@ -68,7 +68,7 @@ export function layout(opts) {
   ${introHtml}
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announce">₹70 flat shipping across Kerala&ensp;·&ensp;Ships all over India</div>
+  <div class="announce">${inr(site.shipping.keralaFlat)} flat shipping across Kerala&ensp;·&ensp;Ships all over India</div>
 
   <header class="site-header">
     <div class="wrap header-row">

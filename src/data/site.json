@@ -21,6 +21,52 @@
     "keralaDays": "2–4 days",
     "indiaDays": "4–7 days"
   },
+  "images": {
+    "heroWide": "images/site/bg_for_top2.jpeg",
+    "heroTall": "images/site/bg_for_top.jpeg",
+    "heroFigure": "images/site/wideheroimage.jpeg",
+    "story": "images/site/meatcheenth.jpeg",
+    "quote": "images/site/demimage2.jpeg",
+    "usage": "images/site/usageimage.jpeg",
+    "spread": "images/site/hero1.jpeg"
+  },
+  "gallery": [
+    { "src": "images/site/bg_for_top.jpeg", "caption": "Pounded with roasted spices, straight from the pot" },
+    { "src": "images/site/imageofcontent.jpeg", "caption": "Fine, smoky strands — that's what you're paying for" },
+    { "src": "images/site/usageimage.jpeg", "caption": "A spoonful over hot rice. This is how we eat it" },
+    { "src": "images/site/hero1.jpeg", "caption": "On the banana leaf, next to everything else" },
+    { "src": "images/site/wideheroimage.jpeg", "caption": "The range — idiyirachi, chicken and meat cheenth" },
+    { "src": "images/site/demoimage3.jpeg", "caption": "One bowl never lasts long" },
+    { "src": "images/site/idiyirachi2.jpeg", "caption": "Packed by hand, jarred the same week it's made" },
+    { "src": "images/site/demoimage.jpeg", "caption": "Ready to eat, straight from the jar" }
+  ],
+  "certs": [
+    { "src": "images/site/certs/halal.jpeg", "label": "Halal", "note": "Meat prepared to halal standards." },
+    { "src": "images/site/certs/low-fat.jpeg", "label": "Low fat", "note": "Dried and smoked — never deep-fried." },
+    { "src": "images/site/certs/no-preservatives.jpeg", "label": "No added preservatives", "note": "Meat, coconut oil, spices, salt. Nothing artificial." }
+  ],
+  "usage": {
+    "heading": "How to eat it",
+    "sub": "It's ready to eat the moment you open the jar. A little goes a long way.",
+    "ideas": [
+      { "title": "With rice and kanji", "text": "A spoonful over hot rice or beside a bowl of kanji. The classic, and still the best." },
+      { "title": "Through fried rice", "text": "Stir it in at the end. It seasons the whole pan — no other masala needed." },
+      { "title": "Straight from the jar", "text": "With tea, in a sandwich, or standing at the kitchen counter. We won't tell." }
+    ]
+  },
+  "quote": {
+    "text": "Meat, coconut oil, spices and salt. Nothing artificial goes in — because nothing artificial needs to.",
+    "attribution": "Our kitchen, every batch"
+  },
+  "marquee": [
+    "Wood-smoked",
+    "Small batch",
+    "100% coconut oil",
+    "No preservatives",
+    "Packed by hand",
+    "Made in Kerala",
+    "Ships all over India"
+  ],
   "story": {
     "heading": "Made at home, the slow way",
     "paragraphs": [

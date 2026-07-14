@@ -49,16 +49,16 @@ $('[data-buy-now]').addEventListener('click', () => {
   window.location.href = '/checkout/';
 });
 
-/* ---- gallery thumbnails ---- */
-const main = $('[data-gallery-main]');
-$$('[data-thumb]').forEach((thumb) => {
-  thumb.addEventListener('click', () => {
-    $$('[data-thumb]').forEach((t) => t.classList.toggle('is-active', t === thumb));
-    const { base, fallback, width, height } = thumb.dataset;
-    const srcset = [400, 800, 1200].map((w) => `${base}-${w}.webp ${w}w`).join(', ');
-    main.innerHTML = `<picture>
-      <source type="image/webp" srcset="${srcset}" sizes="(min-width: 900px) 520px, 92vw">
-      <img src="${fallback}" width="${width}" height="${height}" alt="" decoding="async">
-    </picture>`;
-  });
+/* ---- gallery thumbnails ----
+   The photos live in a snap-scrolling carousel (see main.js). The thumbs are
+   its dots: they scroll it, and follow along when the shopper swipes instead. */
+const gallery = $('.gallery[data-carousel]');
+const thumbs = $$('[data-thumb]');
+
+thumbs.forEach((thumb) => {
+  thumb.addEventListener('click', () => gallery.goToSlide(Number(thumb.dataset.index)));
+});
+
+gallery?.addEventListener('slidechange', (e) => {
+  thumbs.forEach((t) => t.classList.toggle('is-active', Number(t.dataset.index) === e.detail.index));
 });

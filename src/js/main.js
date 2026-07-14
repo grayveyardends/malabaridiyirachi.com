@@ -154,6 +154,91 @@ if (grid) {
   });
 }
 
+/* ---- carousels ----
+   The track scroll-snaps on its own, so a swipe works with no JS at all.
+   This adds the arrows, the dots, and (where asked for) a gentle autoplay
+   that stops for good the moment someone touches the carousel themselves. */
+$$('[data-carousel]').forEach((root) => {
+  const track = $('[data-carousel-track]', root);
+  const prev = $('[data-carousel-prev]', root);
+  const next = $('[data-carousel-next]', root);
+  const dotsBox = $('[data-carousel-dots]', root);
+  const slides = [...track.children];
+  if (slides.length === 0) return;
+
+  // One slide + one gap. Measured live: it changes at every breakpoint.
+  const step = () =>
+    slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+  const index = () => Math.round(track.scrollLeft / step());
+  const lastIndex = () => {
+    // With several slides in view, the final scroll position isn't slides-1.
+    const max = track.scrollWidth - track.clientWidth;
+    return Math.round(max / step());
+  };
+
+  function goTo(i) {
+    const target = Math.max(0, Math.min(lastIndex(), i));
+    track.scrollTo({ left: target * step(), behavior: reduce ? 'auto' : 'smooth' });
+  }
+
+  const dots = dotsBox
+    ? slides.slice(0, lastIndex() + 1).map((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', `Go to photo ${i + 1}`);
+        b.addEventListener('click', () => goTo(i));
+        dotsBox.append(b);
+        return b;
+      })
+    : [];
+
+  function sync() {
+    const i = index();
+    if (prev) prev.disabled = track.scrollLeft < 8;
+    if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 8;
+    dots.forEach((d, di) => d.classList.toggle('is-active', di === i));
+    root.dispatchEvent(new CustomEvent('slidechange', { detail: { index: i } }));
+  }
+
+  if (prev) prev.addEventListener('click', () => goTo(index() - 1));
+  if (next) next.addEventListener('click', () => goTo(index() + 1));
+
+  let scrollTimer;
+  track.addEventListener(
+    'scroll',
+    () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(sync, 90);
+    },
+    { passive: true }
+  );
+
+  root.goToSlide = goTo; // product.js drives the gallery from its thumbnails
+  sync();
+
+  /* ---- autoplay ---- */
+  if (!root.hasAttribute('data-carousel-auto') || reduce) return;
+  let timer = null;
+  let stopped = false;
+  const pause = () => { clearInterval(timer); timer = null; };
+  const play = () => {
+    if (!timer && !stopped && !document.hidden) {
+      timer = setInterval(() => goTo(index() >= lastIndex() ? 0 : index() + 1), 4500);
+    }
+  };
+  const stop = () => { stopped = true; pause(); }; // they're driving now — get out of the way
+
+  root.addEventListener('pointerenter', pause);
+  root.addEventListener('pointerleave', play);
+  root.addEventListener('focusin', pause);
+  root.addEventListener('pointerdown', stop);
+  root.addEventListener('keydown', stop);
+  document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
+
+  // Only run while the gallery is actually on screen.
+  new IntersectionObserver(([en]) => (en.isIntersecting ? play() : pause()), { threshold: 0.4 }).observe(root);
+});
+
 /* ---- reveal on scroll ---- */
 if (reduce) {
   $$('.reveal').forEach((el) => el.classList.add('in-view'));

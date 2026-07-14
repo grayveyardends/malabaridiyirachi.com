@@ -1,22 +1,38 @@
 import { esc, inr, picture, productCard, badgeChips, CATEGORIES, icon } from './partials.js';
 
-// ctx = { site, products }, p = the enriched product
+// ctx = { site, products, certs }, p = the enriched product
 export function productPage(ctx, p) {
-  const { products } = ctx;
+  const { products, certs } = ctx;
   const multi = p.variants.length > 1;
   const first = p.variants[0];
+  const manyPhotos = p.images.length > 1;
 
   const related = [
     ...products.filter((x) => x.slug !== p.slug && x.category === p.category),
     ...products.filter((x) => x.slug !== p.slug && x.category !== p.category)
   ].slice(0, 3);
 
-  const thumbs = p.images.length > 1
-    ? `<div class="gallery-thumbs" role="group" aria-label="More photos">
-        ${p.images.map((img, i) => `<button type="button" class="gallery-thumb${i === 0 ? ' is-active' : ''}" data-thumb data-base="${img.base}" data-fallback="${img.fallback}" data-width="${img.width}" data-height="${img.height}" aria-label="Photo ${i + 1}">
-          <img src="${img.base}-400.webp" width="${img.width}" height="${img.height}" alt="" loading="lazy">
-        </button>`).join('\n        ')}
-      </div>`
+  // The photos scroll-snap in a track, so a swipe works on a phone with no JS.
+  // The thumbnails below double as the carousel's dots.
+  const gallery = `<div class="gallery carousel" data-carousel>
+    ${manyPhotos ? `<button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Previous photo">${icon('arrowLeft')}</button>` : ''}
+    <ul class="carousel-track gallery-track" data-carousel-track role="list" aria-label="${esc(p.name)} photos">
+      ${p.images.map((img, i) => `<li class="gallery-slide">
+        ${picture(img, { alt: i === 0 ? p.name : `${p.name} — photo ${i + 1}`, sizes: '(min-width: 900px) 520px, 92vw', lazy: i > 0 })}
+      </li>`).join('\n      ')}
+    </ul>
+    ${manyPhotos ? `<button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Next photo">${icon('arrowRight')}</button>` : ''}
+  </div>
+  ${manyPhotos ? `<div class="gallery-thumbs" role="group" aria-label="More photos">
+    ${p.images.map((img, i) => `<button type="button" class="gallery-thumb${i === 0 ? ' is-active' : ''}" data-thumb data-index="${i}" aria-label="Photo ${i + 1}">
+      <img src="${img.base}-400.webp" width="${img.width}" height="${img.height}" alt="" loading="lazy">
+    </button>`).join('\n    ')}
+  </div>` : ''}`;
+
+  const certRow = certs.length
+    ? `<ul class="cert-row" aria-label="Our promise">
+        ${certs.map((c) => `<li><img src="${c.img.fallback}" srcset="${c.img.base}-400.webp 400w" width="44" height="44" alt="" loading="lazy" decoding="async"><span>${esc(c.label)}</span></li>`).join('\n        ')}
+      </ul>`
     : '';
 
   return `
@@ -26,11 +42,8 @@ export function productPage(ctx, p) {
     </nav>
 
     <section class="product-layout">
-      <div class="gallery">
-        <div class="gallery-main" data-gallery-main>
-          ${picture(p.images[0], { alt: p.name, sizes: '(min-width: 900px) 520px, 92vw', lazy: false })}
-        </div>
-        ${thumbs}
+      <div class="gallery-col">
+        ${gallery}
       </div>
 
       <div class="product-info">
@@ -51,6 +64,8 @@ export function productPage(ctx, p) {
           <button type="button" class="btn btn-primary btn-lg" data-product-add data-slug="${p.slug}">Add to cart</button>
         </div>
         <button type="button" class="btn btn-wa btn-block" data-buy-now data-slug="${p.slug}">${icon('whatsapp')} Buy now on WhatsApp</button>
+
+        ${certRow}
 
         ${badgeChips(p.badges)}
 
