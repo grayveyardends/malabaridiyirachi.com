@@ -8,8 +8,8 @@
     "sort": 1,
     "badges": ["Bestseller", "No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 700 },
-      { "id": "100g", "label": "100g", "price": 280 }
+      { "id": "250g", "label": "250g", "price": 650 },
+      { "id": "100g", "label": "100g", "price": 260 }
     ],
     "description": [
       "This is the classic. Buffalo meat is slow-dried, smoked over wood, and pounded with roasted spices until it turns into fine, smoky strands.",
@@ -30,8 +30,8 @@
     "sort": 2,
     "badges": ["No preservatives", "100% coconut oil", "High protein"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 585 },
-      { "id": "100g", "label": "100g", "price": 235 }
+      { "id": "250g", "label": "250g", "price": 540 },
+      { "id": "100g", "label": "100g", "price": 215 }
     ],
     "description": [
       "The lighter cousin of our classic idiyirachi. Chicken is dried, smoked and shredded fine with roasted spices.",
@@ -52,8 +52,8 @@
     "sort": 3,
     "badges": ["No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 760 },
-      { "id": "100g", "label": "100g", "price": 305 }
+      { "id": "250g", "label": "250g", "price": 700 },
+      { "id": "100g", "label": "100g", "price": 280 }
     ],
     "description": [
       "Cheenth means torn — buffalo meat pulled into bigger, chunkier pieces than idiyirachi, so every bite is more meaty and more intense.",
@@ -74,7 +74,7 @@
     "sort": 4,
     "badges": ["No preservatives", "Homemade"],
     "variants": [
-      { "id": "500g", "label": "500g", "price": 700 }
+      { "id": "500g", "label": "500g", "price": 650 }
     ],
     "description": [
       "Tender beef, wet-roasted with spices and finished in vinegar the way it's done in Kerala homes.",
@@ -95,7 +95,7 @@
     "sort": 5,
     "badges": ["No preservatives", "Homemade"],
     "variants": [
-      { "id": "500g", "label": "500g", "price": 700 }
+      { "id": "500g", "label": "500g", "price": 650 }
     ],
     "description": [
       "Fresh fish is marinated, fried, and folded into a spicy, tangy pickle masala.",
@@ -116,7 +116,7 @@
     "sort": 6,
     "badges": ["Vegetarian", "No preservatives"],
     "variants": [
-      { "id": "500g", "label": "500g", "price": 250 }
+      { "id": "250", "label": "250g", "price": 230 }
     ],
     "description": [
       "Ivy gourd (kovakka), sliced thin and fried crisp with spices — a Malabar side dish that disappears fast.",

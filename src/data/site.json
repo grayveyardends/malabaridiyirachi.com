@@ -17,7 +17,7 @@
   "geo": { "lat": 10.0134, "lng": 76.2937 },
   "mapsUrl": "https://www.google.com/maps?q=Malabar+Idiyirachi,+Palarivattom,+Ernakulam,+Kerala",
   "shipping": {
-    "keralaFlat": 70,
+    "keralaFlat": 80,
     "keralaDays": "2–4 days",
     "indiaDays": "4–7 days"
   },
