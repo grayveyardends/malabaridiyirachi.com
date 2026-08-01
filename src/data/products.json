@@ -8,8 +8,8 @@
     "sort": 1,
     "badges": ["Bestseller", "No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 650 },
-      { "id": "100g", "label": "100g", "price": 260 }
+      { "id": "250g", "label": "250g", "price": 750 },
+      { "id": "100g", "label": "100g", "price": 300 }
     ],
     "photos": [
       "images/site/imageofcontent.jpeg",
@@ -36,8 +36,8 @@
     "sort": 2,
     "badges": ["No preservatives", "100% coconut oil", "High protein"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 540 },
-      { "id": "100g", "label": "100g", "price": 215 }
+      { "id": "250g", "label": "250g", "price": 650 },
+      { "id": "100g", "label": "100g", "price": 260 }
     ],
     "description": [
       "The lighter cousin of our classic idiyirachi. Chicken is dried, smoked and shredded fine with roasted spices.",
@@ -58,8 +58,8 @@
     "sort": 3,
     "badges": ["No preservatives", "Ready to eat"],
     "variants": [
-      { "id": "250g", "label": "250g", "price": 700 },
-      { "id": "100g", "label": "100g", "price": 280 }
+      { "id": "250g", "label": "250g", "price": 825 },
+      { "id": "100g", "label": "100g", "price": 330 }
     ],
     "photos": [
       "images/site/meatcheenth.jpeg",
@@ -84,7 +84,7 @@
     "sort": 4,
     "badges": ["No preservatives", "Homemade"],
     "variants": [
-      { "id": "500g", "label": "500g", "price": 650 }
+      { "id": "500g", "label": "500g", "price": 750 }
     ],
     "description": [
       "Tender beef, wet-roasted with spices and finished in vinegar the way it's done in Kerala homes.",
@@ -105,7 +105,7 @@
     "sort": 5,
     "badges": ["No preservatives", "Homemade"],
     "variants": [
-      { "id": "500g", "label": "500g", "price": 650 }
+      { "id": "500g", "label": "500g", "price": 750 }
     ],
     "description": [
       "Fresh fish is marinated, fried, and folded into a spicy, tangy pickle masala.",
@@ -116,26 +116,5 @@
     "shelfLife": "See packed date and use-by date on the label. Refrigerate after opening.",
     "serves": "500g serves 20–22",
     "seoDescription": "Buy homemade Kerala Fish Pickle online — fried fish in a tangy, spicy achar masala. No preservatives. Ships across India."
-  },
-  {
-    "slug": "kovakka-fry",
-    "name": "Kovakka Fry",
-    "tagline": "Crispy fried ivy gourd — the vegetarian favourite",
-    "category": "veg",
-    "featured": false,
-    "sort": 6,
-    "badges": ["Vegetarian", "No preservatives"],
-    "variants": [
-      { "id": "250", "label": "250g", "price": 230 }
-    ],
-    "description": [
-      "Ivy gourd (kovakka), sliced thin and fried crisp with spices — a Malabar side dish that disappears fast.",
-      "Sprinkle it over rice or eat it like a snack. Either way, one jar is never enough.",
-      "Vegetarian, made in small batches, no preservatives."
-    ],
-    "ingredients": "Ivy gourd (kovakka), coconut oil, chilli, spices, salt",
-    "shelfLife": "See packed date and use-by date on the label. Keep sealed and dry.",
-    "serves": "500g serves 8–10",
-    "seoDescription": "Buy Kovakka Fry (crispy fried ivy gourd) online — a crunchy, spicy Malabar vegetarian side. No preservatives. Ships across India."
   }
 ]

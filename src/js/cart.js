@@ -8,7 +8,6 @@ const KEY = 'malabarCart';
 const LEGACY_IDS = {
   'chicken-100': ['chicken-idiyirachi', '100g'],
   'chicken-250': ['chicken-idiyirachi', '250g'],
-  'ivy-gourd': ['kovakka-fry', '500g'],
   'meat-100': ['meat-cheenth', '100g'],
   'meat-250': ['meat-cheenth', '250g'],
   'beef-pickle': ['beef-pickle', '500g'],
